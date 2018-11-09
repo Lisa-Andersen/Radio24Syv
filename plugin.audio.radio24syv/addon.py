@@ -1,7 +1,7 @@
 import xbmcaddon
 import xbmcgui
 
-addon		= xbmc.Addon()
+addon		= xbmcaddon.Addon()
 addonname	= addon.getAddonInfo('name')
 
 message = "Initial radio24syv addon"
