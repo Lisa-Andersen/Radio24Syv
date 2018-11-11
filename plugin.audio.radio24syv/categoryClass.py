@@ -22,3 +22,13 @@ def Get_Categories():
             programs.append(program)
         categories.append(Category(category["name"].encode("utf-8"), programs))
     return categories
+
+def Get_ProgramsFrom_Category(name):
+    programIds = []
+    open_url = openUrl.Open_Url("http://api.radio24syv.dk/v2/topics")
+    jsonData = json.loads(open_url)
+    for category in jsonData:
+        if(category["name"] == name):
+            for program in category["albums"]:
+                programIds.append(program)
+    return programIds
